@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title='Plotter de Nyquist', page_icon='📈')
 
-def plot(df):
+def plot(df, legend):
     fig = go.Figure()
     for i in range(len(df)):
         fig.add_trace(go.Scatter(
@@ -30,7 +30,7 @@ def plot(df):
         autosize=True,
         width=900,
         height=900,
-        legend_title_text='Espectros_RQ_RQ'
+        legend_title_text=legend
     )
     fig.update_xaxes(title_text="Z'(Ω)")
     fig.update_yaxes(title_text='Z"(Ω)')
@@ -45,13 +45,13 @@ escolha = bar.selectbox(
 
 if escolha == 'RQ_RQ':
     rq_rq = pd.read_json('https://raw.githubusercontent.com/jherfson/machine-de-espectro-de-impedancia/main/dados/amostra_RQ_RQ.json')
-    plot(rq_rq)
+    plot(rq_rq, legend='RQ_RQ')
 
     
     
 if escolha == 'RQRQ_Q':
     rqrq_rq = pd.read_json('https://raw.githubusercontent.com/jherfson/machine-de-espectro-de-impedancia/main/dados/amostra_RQRQ_RQ.json')
-    plot(rqrq_rq)
+    plot(rqrq_rq, legend='RQRQ_Q')
 
 
 
