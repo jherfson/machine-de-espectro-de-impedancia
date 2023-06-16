@@ -40,7 +40,7 @@ bar = st.sidebar
 
 escolha = bar.selectbox(
     'Escolha um modelo de circuito',
-    ['RQ_RQ', 'RQRQ_Q']
+    ['RQ_RQ', 'RQRQ_RQ']
 )
 
 if escolha == 'RQ_RQ':
@@ -49,9 +49,9 @@ if escolha == 'RQ_RQ':
 
     
     
-if escolha == 'RQRQ_Q':
+if escolha == 'RQRQ_RQ':
     rqrq_rq = pd.read_json('https://raw.githubusercontent.com/jherfson/machine-de-espectro-de-impedancia/main/dados/amostra_RQRQ_RQ.json')
-    plot(rqrq_rq, legend='RQRQ_Q')
+    plot(rqrq_rq, legend='RQRQ_RQ')
 
 
 
