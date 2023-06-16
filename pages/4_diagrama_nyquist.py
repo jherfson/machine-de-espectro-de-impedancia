@@ -4,7 +4,7 @@ import streamlit as st
 import plotly.graph_objects as go
 
 
-st.set_page_config(page_title='Plotter de Nyquist', page_icon='📈')
+st.set_page_config(page_title='Diagrama de Nyquist', page_icon='📈')
 
 def plot(df, legend):
     fig = go.Figure()
