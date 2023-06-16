@@ -3,6 +3,9 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
 
+
+st.set_page_config(page_title='Plotter de Nyquist', page_icon='📈')
+
 def plot(df):
     fig = go.Figure()
     for i in range(len(df)):
@@ -36,18 +39,19 @@ def plot(df):
 bar = st.sidebar
 
 escolha = bar.selectbox(
-    'Escolha um categoria',
+    'Escolha um modelo de circuito',
     ['RQ_RQ', 'RQRQ_Q']
 )
 
 if escolha == 'RQ_RQ':
-    rq_rq = pd.read_json('/dados/amostra_RQ_RQ.json')
+    rq_rq = pd.read_json('https://raw.githubusercontent.com/jherfson/machine-de-espectro-de-impedancia/main/dados/amostra_RQ_RQ.json')
     plot(rq_rq)
 
     
     
-elif escolha == 'RQRQ_RQ':
-    rqrq_rq = pd.read_csv('https://raw.githubusercontent.com/jherfson/machine-de-espectro-de-impedancia/main/dados/amostra_RQRQ_RQ.csv')
+if escolha == 'RQRQ_Q':
+    rqrq_rq = pd.read_json('https://raw.githubusercontent.com/jherfson/machine-de-espectro-de-impedancia/main/dados/amostra_RQRQ_RQ.json')
+    plot(rqrq_rq)
 
 
 
