@@ -19,7 +19,8 @@ def plot(df, legend, colors):
             opacity=1.0,
             marker=dict(
                 size=80
-            )             
+            ),
+                         
         )
     )
     fig.update_traces(
@@ -41,8 +42,8 @@ def plot(df, legend, colors):
             gridwidth=2
         ),
         #autosize=True,
-        width=900,
-        height=900,
+        width=1500,
+        height=600,
         legend_title_text=legend,
         
     )
