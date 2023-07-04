@@ -6,6 +6,7 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title='Diagrama de Nyquist', page_icon='📈')
 
+@st.cache_data 
 def plot(df, legend):
     fig = go.Figure()
     for i in range(len(df)):
@@ -14,9 +15,15 @@ def plot(df, legend):
             y=df['Z_im'][i],
             mode='markers',
             name=i,
-            marker_size=10,
-            width=1000,
-            height=1000,
+            marker_size=10,  
+        )
+    )
+    fig.update_traces(
+        mode='markers', 
+        marker=dict(
+            sizemode='area', 
+            sizeref=20, 
+            line_width=1
         )
     )
     fig.update_layout(
@@ -29,13 +36,13 @@ def plot(df, legend):
             gridcolor='white',
             gridwidth=2
         ),
-        autosize=True,
+        #autosize=True,
         width=900,
         height=900,
-        legend_title_text=legend
+        legend_title_text=legend,
     )
-    fig.update_xaxes(title_text="Z'(Ω)")
-    fig.update_yaxes(title_text='Z"(Ω)')
+    fig.update_xaxes(title_text="Z'(Ω)", )
+    fig.update_yaxes(title_text='Z"(Ω)', )
     st.plotly_chart(fig, theme=None, use_container_width=True)
 
 bar = st.sidebar
