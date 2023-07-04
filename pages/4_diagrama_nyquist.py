@@ -7,7 +7,7 @@ import plotly.graph_objects as go
 st.set_page_config(page_title='Diagrama de Nyquist', page_icon='📈')
 
 @st.cache_data 
-def plot(df, legend):
+def plot(df, legend, colors):
     fig = go.Figure()
     for i in range(len(df)):
         fig.add_trace(go.Scatter(
@@ -15,7 +15,11 @@ def plot(df, legend):
             y=df['Z_im'][i],
             mode='markers',
             name=i,
-            marker_size=10,  
+            marker_size=10,
+            opacity=1.0,
+            marker=dict(
+                size=80
+            )             
         )
     )
     fig.update_traces(
@@ -23,7 +27,7 @@ def plot(df, legend):
         marker=dict(
             sizemode='area', 
             sizeref=20, 
-            line_width=1
+            line_width=0.5
         )
     )
     fig.update_layout(
@@ -40,6 +44,7 @@ def plot(df, legend):
         width=900,
         height=900,
         legend_title_text=legend,
+        
     )
     fig.update_xaxes(title_text="Z'(Ω)", )
     fig.update_yaxes(title_text='Z"(Ω)', )
@@ -54,13 +59,14 @@ escolha = bar.selectbox(
 
 if escolha == 'RQ_RQ':
     rq_rq = pd.read_json('https://raw.githubusercontent.com/jherfson/machine-de-espectro-de-impedancia/main/dados/amostra_RQ_RQ.json')
-    plot(rq_rq, legend='RQ_RQ')
+    colors = list(range(0, len(rq_rq)))
+    plot(rq_rq, legend='RQ_RQ', colors=colors)
 
     
     
 if escolha == 'RQRQ_RQ':
     rqrq_rq = pd.read_json('https://raw.githubusercontent.com/jherfson/machine-de-espectro-de-impedancia/main/dados/amostra_RQRQ_RQ.json')
-    plot(rqrq_rq, legend='RQRQ_RQ')
+    plot(rqrq_rq, legend='RQRQ_RQ', colors=colors)
 
 
 
