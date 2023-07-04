@@ -11,7 +11,7 @@ st.markdown('## Cálculo Estequiométrico ')
 st.sidebar.header('Cálculo Estequiométrico!')
 
 with st.form(key='insert'):
-    input_equacao = st.text_input(label='Insira a equação estequiométrico', placeholder='BaCO3 + MoO3 -> BaMoO4 + CO2')
+    input_equacao = st.text_input(label='Insira a equação estequiométrica', placeholder='BaCO3 + MoO3 -> BaMoO4 + CO2')
     input_massa = st.number_input(label='Insira a massa')
     button_submit = st.form_submit_button('Calcular')
 
