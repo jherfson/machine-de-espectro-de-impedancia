@@ -14,7 +14,9 @@ def plot(df, legend):
             y=df['Z_im'][i],
             mode='markers',
             name=i,
-            marker_size=10
+            marker_size=10,
+            width=1000,
+            height=1000,
         )
     )
     fig.update_layout(
