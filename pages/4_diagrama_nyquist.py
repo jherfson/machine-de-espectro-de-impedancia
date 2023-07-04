@@ -67,6 +67,7 @@ if escolha == 'RQ_RQ':
     
 if escolha == 'RQRQ_RQ':
     rqrq_rq = pd.read_json('https://raw.githubusercontent.com/jherfson/machine-de-espectro-de-impedancia/main/dados/amostra_RQRQ_RQ.json')
+    colors = list(range(0, len(rqrq_rq)))
     plot(rqrq_rq, legend='RQRQ_RQ', colors=colors)
 
 
