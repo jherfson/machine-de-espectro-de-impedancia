@@ -2,7 +2,10 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
+import seaborn as sns
 
+
+sns.set(font_scale = 1.0)
 
 st.set_page_config(page_title='Diagrama de Nyquist', page_icon='📈')
 
