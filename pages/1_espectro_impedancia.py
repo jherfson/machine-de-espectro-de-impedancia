@@ -3,7 +3,12 @@ import numpy as np
 import streamlit as st
 import joblib as jb
 import matplotlib.pyplot as plt
+from yellowbrick.style.palettes import PALETTES, SEQUENCES, color_palette
+from yellowbrick.style import set_palette
+import seaborn as sns
 
+set_palette('paired')
+sns.set(font_scale = 1.0)
 
 modelo = jb.load('modelo.pkl')
 
@@ -41,7 +46,7 @@ if arquivo is not None:
 
     # plot
     fig, ax = plt.subplots(figsize=(12, 12), dpi=100)
-    plt.scatter(espectro["Z'"], espectro['Z"'], s=50, alpha=0.55)
+    plt.scatter(espectro["Z'"], espectro['Z"'], s=55, alpha=0.57)
     ax.set_title('Espectro')
     plt.xticks(fontsize=14)
     plt.yticks(fontsize=14)

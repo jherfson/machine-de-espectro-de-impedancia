@@ -6,3 +6,5 @@ xgboost
 scikit-learn
 plotly
 stoichiometric
+yellowbrick
+seaborn
