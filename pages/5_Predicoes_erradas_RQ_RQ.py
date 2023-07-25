@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 st.write('## Predições erradas feita pelo modelo de Machine Learning!')
-st.write('#### O modelo cometeu um erro ao afirmar que era RQ_RQ, porém a correção é que são RQRQ_RQ')
+st.write('#### O modelo cometeu um erro ao classificar como RQ_RQ, porém o real é que são RQRQ_RQ')
 
 
 # importando os dados do gthub

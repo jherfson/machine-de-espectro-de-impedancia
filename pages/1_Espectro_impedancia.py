@@ -28,7 +28,7 @@ rotulo_collection = [
 
 st.set_page_config(page_title='Espectro de impedância', page_icon='🔋')
 st.markdown('## Espectro de Impedância Eletroquímico 🔋 🪫')
-st.sidebar.header('Espectro de Impedância Eletroquímico')
+# st.sidebar.header('Espectro de Impedância Eletroquímico')
 
 arquivo = st.file_uploader(
     'Suba o seu arquivo aqui!',

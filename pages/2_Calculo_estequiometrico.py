@@ -8,7 +8,7 @@ st.set_page_config(
     page_icon='🧮'
 )
 st.markdown('## Cálculo Estequiométrico ')
-st.sidebar.header('Cálculo Estequiométrico!')
+#st.sidebar.header('Cálculo Estequiométrico!')
 
 with st.form(key='insert'):
     input_equacao = st.text_input(label='Insira a equação estequiométrica', placeholder='BaCO3 + MoO3 -> BaMoO4 + CO2')
