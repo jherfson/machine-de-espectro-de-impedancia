@@ -5,10 +5,14 @@ import plotly.graph_objects as go
 import seaborn as sns
 
 
-sns.set(font_scale = 1.0)
+sns.set_theme()
+sns.set_style("darkgrid")
+sns.set(font_scale=1.0)
 
 st.set_page_config(page_title='Diagrama de Nyquist', page_icon='📈')
 
+st.markdown('## Diagrama Nyquist')
+st.markdown('#### Amostragem aleatória de 100 espectros de impedância dos circuitos RQRQ_RQ e RQ_RQ')
 @st.cache_data 
 def plot(df, legend, colors):
     fig = go.Figure()
